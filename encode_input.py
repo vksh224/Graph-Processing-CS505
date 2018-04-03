@@ -43,6 +43,7 @@ with open(fn) as record_email:
 coded_file=os.path.join(os.path.dirname(__file__), 'dataset_coded.txt')
 with open(coded_file, 'w') as f_coded_file:
     for i in range(len(emails)):
-        f_coded_file.write(' '.join(map(repr, emails[i])))
-        f_coded_file.write("\n")
+        if len(emails[i]) > 0:
+            f_coded_file.write(' '.join(map(repr, emails[i])))
+            f_coded_file.write("\n")
 #pdb.set_trace()
