@@ -6,6 +6,7 @@ Created on Sun Apr  1 23:15:28 2018
 """
 import os
 import pdb
+import pickle
 
 records=[]
 fn=os.path.join(os.path.dirname(__file__), 'dataset.txt')
@@ -29,6 +30,12 @@ with open(index_file, 'w') as f_index_file:
         f_index_file.write(str(i))
         f_index_file.write("\n")
         people_dictunary[people_temp]=i
+
+#Added by Vijay
+rev_people_dict = [(b, a) for (a, b) in people_dictunary.items()]
+people_ID_file = open("people_ID.txt", 'wb')
+pickle.dump(rev_people_dict, people_ID_file)
+people_ID_file.close()
 
 emails=[]        
 fn=os.path.join(os.path.dirname(__file__), 'dataset.txt')
