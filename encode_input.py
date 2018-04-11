@@ -9,7 +9,7 @@ import pdb
 import pickle
 
 records=[]
-fn=os.path.join(os.path.dirname(__file__), 'dataset.txt')
+fn=os.path.join(os.path.dirname(__file__), 'dataset2.txt')
 #pdb.set_trace()
 with open(fn) as record_email:  
     for line in record_email:
@@ -38,7 +38,7 @@ pickle.dump(rev_people_dict, people_ID_file)
 people_ID_file.close()
 
 emails=[]        
-fn=os.path.join(os.path.dirname(__file__), 'dataset.txt')
+fn=os.path.join(os.path.dirname(__file__), 'dataset2.txt')
 #pdb.set_trace()
 with open(fn) as record_email:  
     for line in record_email:

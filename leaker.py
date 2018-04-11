@@ -2,6 +2,17 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import pickle
 
+
+def get_leaker_id(name):
+    person_id = -1
+
+    for ind in range(len(people_code)):
+        if people_code[ind][1] == name:
+            #print ("ID is" , people_code[ind][0])
+            person_id = people_code[ind][0]
+
+    return person_id
+
 #Get leakers list
 def get_leakers(node_id):
     leakers_ids = []
@@ -10,30 +21,11 @@ def get_leakers(node_id):
     # for u, v in G.in_edges(node_id):
     #     leakers_ids.append(u)
 
-    #55 potential links if only incoming edges considered
-    #
-    # DECKER WALKER RICHARDSON GOODWIN FERGUSON UNDERWOOD CARTER BOONE WEST MORENO MEJIA BENSON
-    # OBRIEN DAVENPORT HARVEY VILLARREAL HOGAN MCCOY WEISS BRUCE HUDSON LAWRENCE CARPENTER CHAN
-    # CARR BRIDGES BANKS SINGLETON CONNER YANG BAUER WISE MCDANIEL SANTIAGO SHARP MILLS SIMS WILKINS
-    # SWANSON CARDENAS CANNON MCDONALD MATHIS GARZA MENDOZA SPENCER PATEL MORTON STEWART HUNTER AYALA
-    # COLLIER WILLIAMSON GIBSON AUSTIN
-
     for n in G.nodes():
         if n != node_id and G.has_edge(n, node_id) and G.has_edge(node_id, n):
             leakers_ids.append(n)
+            leakers_names.append(people_code[int(n)][1])
 
-    # Only 7 leakers if both incoming and outgoing edges considered
-    #
-    # RICHARDSON WEST MORENO HUDSON BANKS MCDANIEL MORTON
-
-    with open("people_to_code.txt") as f:
-        lines = f.readlines()
-        for line in lines:
-            line = line.strip()
-            lineArr = line.split(",")
-            # print(lineArr[1])
-            if(lineArr[1] in leakers_ids):
-                leakers_names.append(lineArr[0])
     return leakers_ids, leakers_names
 
 
@@ -54,11 +46,15 @@ fh= open("dataset_coded.txt", "rb")
 G=nx.read_adjlist(fh, create_using=nx.DiGraph())
 #plot_degree_distribution()
 
+f = open("people_ID.txt", "r")
+people_code = pickle.load(open("people_ID.txt", "rb"))
 
 #Question #1: Get list of leakers to woods
 # Woods : 301
+person_id = get_leaker_id("WOODS")
 
-leakers_ids, leakers_names = get_leakers('301')
+print("Number of nodes and edges: " + str(len(G.nodes())) + " " + str(len(G.edges())))
+leakers_ids, leakers_names = get_leakers(str(person_id))
 print("Number of leakers: " + str(len(leakers_ids)))
 print ("Leakers: ")
 for name in leakers_names:
