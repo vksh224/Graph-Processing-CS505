@@ -1,12 +1,30 @@
 import networkx as nx
 import matplotlib.pyplot as plt
+import pickle
 
 #Get leakers list
-def get_incoming_edges(node_id):
+def get_leakers(node_id):
     leakers_ids = []
     leakers_names = []
-    for u, v in G.in_edges(node_id):
-        leakers_ids.append(u)
+
+    # for u, v in G.in_edges(node_id):
+    #     leakers_ids.append(u)
+
+    #55 potential links if only incoming edges considered
+    #
+    # DECKER WALKER RICHARDSON GOODWIN FERGUSON UNDERWOOD CARTER BOONE WEST MORENO MEJIA BENSON
+    # OBRIEN DAVENPORT HARVEY VILLARREAL HOGAN MCCOY WEISS BRUCE HUDSON LAWRENCE CARPENTER CHAN
+    # CARR BRIDGES BANKS SINGLETON CONNER YANG BAUER WISE MCDANIEL SANTIAGO SHARP MILLS SIMS WILKINS
+    # SWANSON CARDENAS CANNON MCDONALD MATHIS GARZA MENDOZA SPENCER PATEL MORTON STEWART HUNTER AYALA
+    # COLLIER WILLIAMSON GIBSON AUSTIN
+
+    for n in G.nodes():
+        if n != node_id and G.has_edge(n, node_id) and G.has_edge(node_id, n):
+            leakers_ids.append(n)
+
+    # Only 7 leakers if both incoming and outgoing edges considered
+    #
+    # RICHARDSON WEST MORENO HUDSON BANKS MCDANIEL MORTON
 
     with open("people_to_code.txt") as f:
         lines = f.readlines()
@@ -38,8 +56,9 @@ G=nx.read_adjlist(fh, create_using=nx.DiGraph())
 
 
 #Question #1: Get list of leakers to woods
-# Woods : 67
-leakers_ids, leakers_names = get_incoming_edges('67')
+# Woods : 301
+
+leakers_ids, leakers_names = get_leakers('301')
 print("Number of leakers: " + str(len(leakers_ids)))
 print ("Leakers: ")
 for name in leakers_names:
