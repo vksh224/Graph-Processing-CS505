@@ -107,3 +107,5 @@ butterfly_list = []
 unique_butterfly_list = []
 
 print_butterfly()
+butterfly_file = open("butterfly.pkl", 'wb')
+pickle.dump(butterfly_list, butterfly_file)
