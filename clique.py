@@ -1,12 +1,11 @@
 import networkx as nx
 import pickle
-from k_clique import *
-from max_clique import *
 
 def get_constrained_undirected_graph(G, g):
 
     for u in G.nodes():
         for v in G. nodes():
+            #add edge in the unidirected graph g only if both directed edges (u,v) and (v,u) are present in directed graph
             if u != v and G.has_edge(u, v) and G.has_edge(v,u):
                 g.add_edge(u,v)
     return g
@@ -22,14 +21,14 @@ def print_largest_size_cliques():
         if len(n) > 2:
             clique3.append([int(i) for i in n])
             count += 1
-            for i in n:
-                print(str(people_code[int(i)][1]), end=" ")
-            print("")
+            # for i in n:
+            #     print(str(people_code[int(i)][1]), end=" ")
+            # print("")
 
 
     print("Number of cliques: ", count)
 
-    print("\n================ END: List of cliques of maximum size ========== \n\n")
+    print("\n================ END: List of cliques of maximum size ========== \n")
 
 def print_butterfly():
     # k_clique_list = k_clique_communities(g, 3)
@@ -40,20 +39,29 @@ def print_butterfly():
 
             if c1 != c2:
                 butterfly = clique3[c1] + list(set(clique3[c2]) - set(clique3[c1]))
+                sorted_butterfly = sorted(butterfly)
                 # butterfly = set(clique3[c2]).union(set(clique3[c1]))
                 #If butterfly exists
-                if clique3[c1] != clique3[c2] and len(butterfly) == 5:
-                    butterfly_list.append(butterfly)
+                if sorted(clique3[c1]) != sorted(clique3[c2]) and len(
+                        sorted_butterfly) == 5 and sorted_butterfly not in butterfly_list:
+                    butterfly_list.append(sorted_butterfly)
                     # print("Butterfly exists between these two cliques")
-                    for i in butterfly:
-                        print(str(people_code[int(i)][1]), end =" ")
-                    print(" ")
+                    print(sorted(clique3[c1]), end = " ")
+                    print(sorted(clique3[c2]), end = " ")
+                    print(" = ", end = " ")
+                    print(sorted_butterfly)
+
+                    #Write name of the people involved in butterfly
+                    # for i in sorted_butterfly:
+                    #     # print(people_code[int(i)][0], end =" ")
+                    #     # print(str(people_code[int(i)][1]), end =" ")
+                    # print(" ")
 
     print("Number of butterfly: ", len(butterfly_list))
 
     print("\n ============== END: Print butterfly ==== ")
 
-    print_unique_butterfly()
+    # print_unique_butterfly()
 
 def print_unique_butterfly():
     sorted_butterfly_list = sorted([sorted(b1) for b1 in butterfly_list])
@@ -64,7 +72,9 @@ def print_unique_butterfly():
             if ind1 != ind2 and sorted_butterfly_list[ind1] == sorted_butterfly_list[ind2]:
                print("Duplicate: " , sorted_butterfly_list[ind1])
 
-    print("Count of unique butterfly ", sorted_butterfly_list)
+    print("Count of unique butterfly ")
+    for butterfly in sorted_butterfly_list:
+        print (butterfly)
 
 
 #main starts here
@@ -74,9 +84,9 @@ people_code = pickle.load(open("people_ID.txt", "rb"))
 
 
 fh = open("dataset_coded.txt", "rb")
-G = nx.read_adjlist(fh, create_using=nx.DiGraph())
+G = nx.read_adjlist(fh, create_using=nx.DiGraph())  #directed graph
 
-g = nx.Graph()
+g = nx.Graph()  #undirected graph
 
 #reduced graph with only bidirected edges (or in other terms undirected graph)
 g = get_constrained_undirected_graph(G, g)
@@ -86,6 +96,12 @@ print("# edges G and g: " + str(len(G.edges())) + " " +  str(len(g.edges())))
 
 clique3 = []
 print_largest_size_cliques()
+
+###### Store it in a file
+clique3_file = open("clique3.pkl", 'wb')
+pickle.dump(clique3, clique3_file)
+clique3_file.close()
+
 
 butterfly_list = []
 unique_butterfly_list = []
