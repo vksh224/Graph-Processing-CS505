@@ -58,7 +58,7 @@ leakers_ids, leakers_names = get_leakers(str(person_id))
 print(" ------------------------- ")
 print ("Q1. List of Leakers: ")
 for name in leakers_names:
-    print(name, end = " ")
+    print(name)
 
 print("\nNumber of leakers: " + str(len(leakers_ids)))
 leakers_ids.append(str(person_id))
