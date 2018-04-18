@@ -55,13 +55,15 @@ person_id = get_leaker_id("WOODS")
 print("Number of nodes and edges: " + str(len(G.nodes())) + " " + str(len(G.edges())))
 leakers_ids, leakers_names = get_leakers(str(person_id))
 
-print ("Leakers: ")
+print(" ------------------------- ")
+print ("Q1. List of Leakers: ")
 for name in leakers_names:
     print(name, end = " ")
 
 print("\nNumber of leakers: " + str(len(leakers_ids)))
 leakers_ids.append(str(person_id))
 # print("Number of leakers: ", leakers_ids)
+print(" ------------------------- ")
 
 leakers_id_file = open("leakers_ids.pkl", 'wb')
 pickle.dump(leakers_ids, leakers_id_file)

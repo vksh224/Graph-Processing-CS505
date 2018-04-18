@@ -67,26 +67,8 @@ high_outDeg_cen = highest_centrality(out_deg_cen)
 print("Out-degree centrality:\t", high_outDeg_cen[0], "=>", high_outDeg_cen[1],  " # edges: ", G.out_degree(high_outDeg_cen[0]))
 
 # Eigenvector centrality
-eig_cen = nx.eigenvector_centrality(G)
-high_eig_cen = highest_centrality(eig_cen)
-print("Eigen centrality:\t", high_eig_cen[0], "=>", high_eig_cen[1],  " # edges: ", G.in_degree(high_eig_cen[0]))
+# eig_cen = nx.eigenvector_centrality(G)
+# high_eig_cen = highest_centrality(eig_cen)
+# print("Eigen centrality:\t", high_eig_cen[0], "=>", high_eig_cen[1],  " # edges: ", G.in_degree(high_eig_cen[0]))
 
 centrality_scatter(in_deg_cen, out_deg_cen)
-
-
-# Closeness centrality
-# clo_cen = nx.closeness_centrality(G)
-
-# high_outDeg_cen = highest_centrality(out_deg_cent_dict)
-# print("In-degree ", high_outDeg_cen, "# edges: ", G.out_degree(high_outDeg_cen[0]))
-
-
-# highest_in_degree_node = highest_in_out_deg_centrality(in_deg_cent_dict)
-# highest_out_degree_node = highest_in_out_deg_centrality(out_deg_cent_dict)
-#
-# print("In-degree: " +  str(people_ID[int(highest_in_degree_node[0])][0]) + " " + str(round(highest_in_degree_node[1],2)))
-# print("Out-degree: " +  str(people_ID[int(highest_out_degree_node[0])][0]) + " " + str(round(highest_out_degree_node[1],2)))
-#
-# # print(len(G.in_degree(int(people_ID[highest_in_degree_node[0]][0]))))
-# print(G.in_degree(highest_in_degree_node[0]), G.out_degree(highest_in_degree_node[0]))
-# print(G.in_degree(highest_out_degree_node[0]), G.out_degree(highest_out_degree_node[0]))
