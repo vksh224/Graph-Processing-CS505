@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a93fff9-57a9-4fce-bdb5-e2a8cc8b4a7c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/degree_distribution.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/leakers.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Plots/butterfly.png" afterPath="$PROJECT_DIR$/Plots/butterfly.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Plots/example_butterfly.png" afterPath="$PROJECT_DIR$/Plots/example_butterfly.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clique3.pkl" afterPath="$PROJECT_DIR$/clique3.pkl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/centrality.py" afterPath="$PROJECT_DIR$/centrality.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clique.py" afterPath="$PROJECT_DIR$/clique.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/network_analysis.py" afterPath="$PROJECT_DIR$/network_analysis.py" />
     </list>
@@ -22,7 +22,7 @@
       <file leaf-file-name="leaker.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/leaker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="581">
+            <state relative-caret-position="930">
               <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
@@ -34,8 +34,8 @@
       <file leaf-file-name="network_analysis.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/network_analysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1825">
-              <caret line="157" column="0" lean-forward="false" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+            <state relative-caret-position="209">
+              <caret line="167" column="8" lean-forward="true" selection-start-line="167" selection-start-column="8" selection-end-line="167" selection-end-column="8" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -43,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="clique.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="clique.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/clique.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="86" column="42" lean-forward="true" selection-start-line="86" selection-start-column="42" selection-end-line="86" selection-end-column="42" />
+            <state relative-caret-position="209">
+              <caret line="42" column="32" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="32" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -65,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="centrality.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="centrality.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/centrality.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="41" lean-forward="false" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+            <state relative-caret-position="-119">
+              <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -92,6 +92,7 @@
       <find>woods</find>
       <find>67</find>
       <find>WOODS</find>
+      <find>subgra</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -110,9 +111,9 @@
         <option value="$PROJECT_DIR$/encode_input.py" />
         <option value="$PROJECT_DIR$/max_clique.py" />
         <option value="$PROJECT_DIR$/leaker.py" />
+        <option value="$PROJECT_DIR$/centrality.py" />
         <option value="$PROJECT_DIR$/clique.py" />
         <option value="$PROJECT_DIR$/network_analysis.py" />
-        <option value="$PROJECT_DIR$/centrality.py" />
       </list>
     </option>
   </component>
@@ -138,6 +139,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -152,8 +155,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -177,7 +178,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.centrality">
+  <component name="RunManager" selected="Python.network_analysis">
     <configuration default="false" name="encode_input" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -341,9 +342,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.centrality" />
-        <item index="1" class="java.lang.String" itemvalue="Python.network_analysis" />
-        <item index="2" class="java.lang.String" itemvalue="Python.clique" />
+        <item index="0" class="java.lang.String" itemvalue="Python.network_analysis" />
+        <item index="1" class="java.lang.String" itemvalue="Python.clique" />
+        <item index="2" class="java.lang.String" itemvalue="Python.centrality" />
         <item index="3" class="java.lang.String" itemvalue="Python.leaker" />
         <item index="4" class="java.lang.String" itemvalue="Python.encode_input" />
       </list>
@@ -368,8 +369,8 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21774857" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32920793" sideWeight="0.13804437" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32920793" sideWeight="0.86195564" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32920793" sideWeight="0.14379622" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32920793" sideWeight="0.8562038" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -753,28 +754,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/leaker.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
+        <state relative-caret-position="930">
           <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clique.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="86" column="42" lean-forward="true" selection-start-line="86" selection-start-column="42" selection-end-line="86" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/network_analysis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1825">
-          <caret line="157" column="0" lean-forward="false" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
@@ -783,8 +764,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/centrality.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="41" lean-forward="false" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+        <state relative-caret-position="-119">
+          <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network_analysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="167" column="8" lean-forward="true" selection-start-line="167" selection-start-column="8" selection-end-line="167" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clique.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="42" column="32" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="32" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>

@@ -39,13 +39,19 @@ def print_butterfly():
 
             if c1 != c2:
                 butterfly = clique3[c1] + list(set(clique3[c2]) - set(clique3[c1]))
+                # butterfly = list(set(clique3[c2]).union(set(clique3[c1])))
                 sorted_butterfly = sorted(butterfly)
-                # butterfly = set(clique3[c2]).union(set(clique3[c1]))
+
+                H = G.subgraph([str(n) for n in sorted_butterfly])
+                # print(len(H.edges()))
+
                 #If butterfly exists
                 if sorted(clique3[c1]) != sorted(clique3[c2]) and len(
-                        sorted_butterfly) == 5 and sorted_butterfly not in butterfly_list:
+                        sorted_butterfly) == 5 and sorted_butterfly not in butterfly_list and len(H.edges()) == 12:
+
                     butterfly_list.append(sorted_butterfly)
                     # print("Butterfly exists between these two cliques")
+
                     print(sorted(clique3[c1]), end = " ")
                     print(sorted(clique3[c2]), end = " ")
                     print(" = ", end = " ")

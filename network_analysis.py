@@ -166,13 +166,13 @@ print(max(in_degree_count))
 # plot_degree_dist(in_degree_count, out_degree_count)
 
 # plot_graph()
-plot_inDegree_dist(in_degree_count)
-plot_outDegree_dist(out_degree_count)
+# plot_inDegree_dist(in_degree_count)
+# plot_outDegree_dist(out_degree_count)
 # plot_leakers()
 # plot_cliques()
 # plot_one_clique()
 
-# plot_butterfly()
-# plot_one_butterfly()
+plot_butterfly()
+plot_one_butterfly()
 
-plot_centrality()
+# plot_centrality()
