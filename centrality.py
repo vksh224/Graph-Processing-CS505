@@ -31,7 +31,7 @@ def centrality_scatter(dict1,dict2):
     ax1.set_ylabel("Out-degree centrality")
     plt.savefig("Plots/deg_centrality.png")
 
-def highest_centrality(cent_dict):
+def highest_K_centrality(cent_dict, K):
     cent_items = [(b, a) for (a, b) in cent_dict.items()]
     cent_items.sort()
     cent_items.reverse() #In decreasing order
@@ -42,7 +42,7 @@ def highest_centrality(cent_dict):
             high_cent_items.append(cent_items[i])
 
     # print(" Other nodes with same centrality: ", high_cent_items)
-    return tuple(reversed(cent_items[0]))
+    return tuple(reversed(cent_items[0:K]))
 
 
 #Main starts here
@@ -56,19 +56,43 @@ people_ID = pickle.load(open("people_ID.txt", "rb"))
 largest_cc = max(nx.strongly_connected_components(G), key=len)
 print("Size of largest strongly connected components ", len(largest_cc))
 
+K = 10
+
 #In degree centrality
 in_deg_cen = nx.in_degree_centrality(G)
-high_inDeg_cen = highest_centrality(in_deg_cen)
-print("In-degree centrality:\t", high_inDeg_cen[0], "=>", high_inDeg_cen[1],  " # edges: ", G.in_degree(high_inDeg_cen[0]))
+high_inDeg_cen = highest_K_centrality(in_deg_cen, K)
+
+print("Q4---------------------------\n")
+print("Top ", K , " influential people (in terms of highest in-degree centrality): \n")
+
+print("\nPeople \t (In-degree, out-degree)")
+print("-------------------------------------")
+for n in high_inDeg_cen:
+    print(people_ID[int(n[1])][1], "\t(", G.in_degree(n[1]), ", ", G.out_degree(n[1]), ")")
 
 #Out degree centrality
 out_deg_cen = nx.out_degree_centrality(G)
-high_outDeg_cen = highest_centrality(out_deg_cen)
-print("Out-degree centrality:\t", high_outDeg_cen[0], "=>", high_outDeg_cen[1],  " # edges: ", G.out_degree(high_outDeg_cen[0]))
+high_outDeg_cen = highest_K_centrality(out_deg_cen, K)
+
+
+print("\nTop ", K , " influential people (in terms of highest out-degree centrality): \n")
+
+print("\nPeople \t (In-degree, out-degree)")
+print("-------------------------------------")
+for n in high_outDeg_cen:
+    print(people_ID[int(n[1])][1], "\t(", G.in_degree(n[1]), ", ", G.out_degree(n[1]), ")")
+
+print("--------------------------------")
+
+
+
+
+# print("Out-degree centrality:\t", high_outDeg_cen[0], "=>", high_outDeg_cen[1],  " # edges: ", G.out_degree(high_outDeg_cen[0]))
+
+
+# centrality_scatter(in_deg_cen, out_deg_cen)
 
 # Eigenvector centrality
 # eig_cen = nx.eigenvector_centrality(G)
 # high_eig_cen = highest_centrality(eig_cen)
 # print("Eigen centrality:\t", high_eig_cen[0], "=>", high_eig_cen[1],  " # edges: ", G.in_degree(high_eig_cen[0]))
-
-centrality_scatter(in_deg_cen, out_deg_cen)
