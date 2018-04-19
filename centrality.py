@@ -29,19 +29,12 @@ def centrality_scatter(dict1,dict2):
     ax1.set_title("Centrality")
     ax1.set_xlabel("In-degree centrality")
     ax1.set_ylabel("Out-degree centrality")
-    plt.savefig("Plots/deg_centrality.png")
+    plt.savefig("Plots/topK_deg_centrality.png")
 
 def highest_K_centrality(cent_dict, K):
     cent_items = [(b, a) for (a, b) in cent_dict.items()]
     cent_items.sort()
     cent_items.reverse() #In decreasing order
-
-    high_cent_items = []
-    for i in range(1, len(cent_items)):
-        if cent_items[i][0] == cent_items[0][0]:
-            high_cent_items.append(cent_items[i])
-
-    # print(" Other nodes with same centrality: ", high_cent_items)
     return tuple(reversed(cent_items[0:K]))
 
 
@@ -84,6 +77,7 @@ for n in high_outDeg_cen:
 
 print("--------------------------------")
 
+centrality_scatter(in_deg_cen, out_deg_cen)
 
 
 
